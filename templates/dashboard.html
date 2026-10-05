@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | NIDS-AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">NIDS-AI</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/model-info">Model Info</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-page">
+
+        <div class="page-header">
+            <p class="tagline">SYSTEM OVERVIEW</p>
+            <h1>Network Security Dashboard</h1>
+            <p>
+                Overview of the AI-powered network intrusion
+                detection system.
+            </p>
+        </div>
+
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+                <span>Dataset Records</span>
+                <strong>28,000</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Attack Classes</span>
+                <strong>5</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Selected Features</span>
+                <strong>20</strong>
+            </div>
+
+            <div class="dashboard-card">
+                <span>Final Model</span>
+                <strong>Random Forest</strong>
+            </div>
+
+        </div>
+
+        <div class="class-section">
+
+            <h2>Supported Attack Categories</h2>
+
+            <div class="class-grid">
+
+                <div class="class-card">
+                    <h3>Normal</h3>
+                    <p>Normal network activity.</p>
+                </div>
+
+                <div class="class-card">
+                    <h3>DoS</h3>
+                    <p>Denial of Service attack.</p>
+                </div>
+
+                <div class="class-card">
+                    <h3>Probe</h3>
+                    <p>Network scanning or probing activity.</p>
+                </div>
+
+                <div class="class-card">
+                    <h3>R2L</h3>
+                    <p>Remote to Local attack category.</p>
+                </div>
+
+                <div class="class-card">
+                    <h3>U2R</h3>
+                    <p>User to Root attack category.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

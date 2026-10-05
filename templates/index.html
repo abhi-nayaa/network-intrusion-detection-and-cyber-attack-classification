@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Network Intrusion Detection</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            NIDS-AI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/model-info">Model Info</a>
+        </div>
+    </nav>
+
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <p class="tagline">
+                AI-POWERED CYBERSECURITY
+            </p>
+
+            <h1>
+                Network Intrusion Detection
+                <br>
+                & Cyber Attack Classification
+            </h1>
+
+            <p class="description">
+                Detect and classify network activity into Normal,
+                DoS, Probe, R2L, and U2R categories using machine learning.
+            </p>
+
+            <div class="buttons">
+                <a href="/predict" class="btn primary">
+                    Start Prediction
+                </a>
+
+                <a href="/model-info" class="btn secondary">
+                    View Model
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

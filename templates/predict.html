@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Intrusion Prediction | NIDS-AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">NIDS-AI</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/model-info">Model Info</a>
+        </div>
+    </nav>
+
+
+    <main class="prediction-page">
+
+        <div class="page-header">
+            <p class="tagline">NETWORK ANALYSIS</p>
+
+            <h1>Intrusion Prediction</h1>
+
+            <p>
+                Enter the network traffic information below.
+                The system will automatically calculate the engineered features
+                and classify the network activity.
+            </p>
+        </div>
+
+
+        <form method="POST" class="prediction-form">
+
+            <div class="section-title">
+                Basic Network Information
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Duration</label>
+                    <input type="number"
+                           name="duration"
+                           min="0"
+                           step="any"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Source Bytes</label>
+                    <input type="number"
+                           name="src_bytes"
+                           min="0"
+                           step="any"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Destination Bytes</label>
+                    <input type="number"
+                           name="dst_bytes"
+                           min="0"
+                           step="any"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Logged In</label>
+                    <select name="logged_in" required>
+                        <option value="">Select</option>
+                        <option value="0">No (0)</option>
+                        <option value="1">Yes (1)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Number Compromised</label>
+                    <input type="number"
+                           name="num_compromised"
+                           min="0"
+                           step="1"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Number of Shells</label>
+                    <input type="number"
+                           name="num_shells"
+                           min="0"
+                           step="1"
+                           required>
+                </div>
+
+            </div>
+
+
+            <div class="section-title">
+                Traffic Statistics
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Connection Count</label>
+                    <input type="number"
+                           name="count"
+                           min="0"
+                           step="1"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Service Count</label>
+                    <input type="number"
+                           name="srv_count"
+                           min="0"
+                           step="1"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>S Error Rate</label>
+                    <input type="number"
+                           name="serror_rate"
+                           min="0"
+                           max="1"
+                           step="0.01"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>R Error Rate</label>
+                    <input type="number"
+                           name="rerror_rate"
+                           min="0"
+                           max="1"
+                           step="0.01"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Same Service Rate</label>
+                    <input type="number"
+                           name="same_srv_rate"
+                           min="0"
+                           max="1"
+                           step="0.01"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Different Service Rate</label>
+                    <input type="number"
+                           name="diff_srv_rate"
+                           min="0"
+                           max="1"
+                           step="0.01"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Service Difference Host Rate</label>
+                    <input type="number"
+                           name="srv_diff_host_rate"
+                           min="0"
+                           max="1"
+                           step="0.01"
+                           required>
+                </div>
+
+            </div>
+
+
+            <div class="section-title">
+                Destination Host Statistics
+            </div>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Destination Host Count</label>
+                    <input type="number"
+                           name="dst_host_count"
+                           min="0"
+                           step="1"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Destination Host Service Count</label>
+                    <input type="number"
+                           name="dst_host_srv_count"
+                           min="0"
+                           step="1"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Host Same Service Rate</label>
+                    <input type="number"
+                           name="dst_host_same_srv_rate"
+                           min="0"
+                           max="1"
+                           step="0.01"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Host Different Service Rate</label>
+                    <input type="number"
+                           name="dst_host_diff_srv_rate"
+                           min="0"
+                           max="1"
+                           step="0.01"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label>Host S Error Rate</label>
+                    <input type="number"
+                           name="dst_host_serror_rate"
+                           min="0"
+                           max="1"
+                           step="0.01"
+                           required>
+                </div>
+
+            </div>
+
+
+            <div class="engineered-info">
+
+                <strong>Automatically calculated:</strong>
+
+                <p>
+                    Total Bytes = Source Bytes + Destination Bytes
+                </p>
+
+                <p>
+                    Total Error Rate = S Error Rate + R Error Rate
+                </p>
+
+            </div>
+
+
+            <button type="submit" class="predict-button">
+                Detect Network Activity
+            </button>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>

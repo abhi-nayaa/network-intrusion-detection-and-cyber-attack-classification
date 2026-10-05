@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Model Information | NIDS-AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">NIDS-AI</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/model-info">Model Info</a>
+        </div>
+    </nav>
+
+
+    <main class="model-page">
+
+        <div class="page-header">
+
+            <p class="tagline">MACHINE LEARNING MODEL</p>
+
+            <h1>Model Information</h1>
+
+            <p>
+                Technical details of the network intrusion
+                detection model.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h2>Dataset</h2>
+
+            <div class="info-row">
+                <span>Dataset</span>
+                <strong>NIDS-28</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Records</span>
+                <strong>28,000</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Target</span>
+                <strong>attack_type</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Classes</span>
+                <strong>5</strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h2>Machine Learning</h2>
+
+            <div class="info-row">
+                <span>Final Algorithm</span>
+                <strong>Random Forest Classifier</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Feature Selection</span>
+                <strong>SelectKBest</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Selected Features</span>
+                <strong>20</strong>
+            </div>
+
+            <div class="info-row">
+                <span>Cross Validation</span>
+                <strong>5-Fold Stratified CV</strong>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h2>Supported Classes</h2>
+
+            <p>Normal</p>
+            <p>DoS</p>
+            <p>Probe</p>
+            <p>R2L</p>
+            <p>U2R</p>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

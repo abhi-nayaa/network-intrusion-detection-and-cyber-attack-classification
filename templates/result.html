@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result | NIDS-AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">NIDS-AI</div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/predict">Predict</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/model-info">Model Info</a>
+        </div>
+
+    </nav>
+
+
+    <main class="result-page">
+
+        <div class="result-card">
+
+            <p class="tagline">
+                ANALYSIS COMPLETE
+            </p>
+
+            <h1>Prediction Result</h1>
+
+            <div class="prediction-result">
+
+                <span>Detected Activity</span>
+
+                <h2>{{ prediction }}</h2>
+
+            </div>
+
+
+            <div class="confidence-box">
+
+                <span>Model Confidence</span>
+
+                <strong>{{ confidence }}%</strong>
+
+            </div>
+
+
+            <h3>Class Probabilities</h3>
+
+            <div class="probability-list">
+
+                {% for class_name, probability in probabilities.items() %}
+
+                <div class="probability-row">
+
+                    <span>{{ class_name }}</span>
+
+                    <span>{{ probability }}%</span>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+
+            <a href="/predict" class="btn primary">
+                New Prediction
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

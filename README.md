@@ -128,7 +128,6 @@ Two new features were created:
 
 ### Total Bytes
 
-```text
 total_bytes = src_bytes + dst_bytes
 
 ## Web Application
@@ -145,4 +144,3 @@ total_bytes = src_bytes + dst_bytes
 
 ### Dashboard
 ![Dashboard](screenshots/dashboard.png)
-

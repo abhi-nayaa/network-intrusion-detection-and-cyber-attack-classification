@@ -130,3 +130,19 @@ Two new features were created:
 
 ```text
 total_bytes = src_bytes + dst_bytes
+
+## Web Application
+
+### Home Page
+![Home Page](screenshots/home.png)
+
+### Prediction Page
+![Prediction Page - Part 1](screenshots/prediction1.png)
+![Prediction Page - Part 2](screenshots/prediction2.png)
+
+### Prediction Result
+![Prediction Result](screenshots/result.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
